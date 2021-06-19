@@ -1,0 +1,28 @@
+.main-nav>li>div>a:hover, .main-nav>li>div>a:focus, .main-nav>li>div.active>a, .dropdown-item:hover {
+    color: #D10024;
+    background-color: transparent;
+}
+
+.main-nav>li>div>a::before {
+    content: "";
+    display: block;
+    position: relative;
+    bottom: -24px;
+    width: 0;
+    height: 2px;
+    background-color: #D10024;
+    transition: 0.2s all;
+}
+
+.main-nav>li>div>a:hover:before, .main-nav>li>div>a:focus:before, .main-nav>li.active>div>a:before {
+    width: 100%;
+}
+
+.logDrop{
+    color: #15161D;
+}
+
+a:not([href]):hover {
+    color: #D10024;
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+.disabled {
+  cursor: not-allowed;
+}
+
+.newProductCart {
+  overflow: hidden;
+}
+.newProductCart img{
+  transition: 0.2s all;
+}
+.newProductCart img:hover{
+  transform: scale(1.1);
+}

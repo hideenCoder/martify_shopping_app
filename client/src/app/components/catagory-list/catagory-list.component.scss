@@ -1,0 +1,9 @@
+.catItem img{
+    box-shadow: 0 0 30px -10px #D10024;
+}
+
+.catItem:hover{
+    transform: scale(1.1);
+    -webkit-transition: 0.2s all;
+    transition: .2s all;
+}

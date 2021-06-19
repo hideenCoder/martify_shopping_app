@@ -1,0 +1,96 @@
+<div class="container w-50 my-5" fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+        <p>
+            <mat-toolbar color="warn">
+                <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <mat-icon>menu</mat-icon>
+                </button> -->
+                <span class="w-100" style="text-align: center;">Register a new Account</span>
+                <!-- <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon"
+                    aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>share</mat-icon>
+                </button> -->
+            </mat-toolbar>
+        </p>
+        <form [formGroup]="registerForm" (ngSubmit)="register()"
+            class="d-flex flex-column align-items-center justify-content-center">
+            <p fxLayoutAlign="center" class="d-flex align-items-center justify-content-center w-100">
+                <mat-form-field appearance="standard" style="width: 80%;">
+                    <mat-label>Enter First Name</mat-label>
+                    <input type="text" matInput placeholder="First Name" ngModel name="fname"
+                        [ngClass]="{ 'is-invalid': registerForm.get('fname').touched && registerForm.get('fname').invalid }"
+                        formControlName="fname">
+                    <mat-icon matSuffix>Name</mat-icon>
+                    <mat-hint>first name</mat-hint>
+                    <span class="invalid-feedback">First Name can't be blank.</span>
+                </mat-form-field>
+            </p>
+            <p fxLayoutAlign="center" class="d-flex align-items-center justify-content-center w-100">
+                <mat-form-field appearance="standard" style="width: 80%;">
+                    <mat-label>Enter Last Name</mat-label>
+                    <input type="text" matInput placeholder="Last Name" ngModel name="lname"
+                        [ngClass]="{ 'is-invalid': registerForm.get('lname').touched && registerForm.get('lname').invalid }"
+                        formControlName="lname">
+                    <mat-icon matSuffix>Name</mat-icon>
+                    <mat-hint>Last name</mat-hint>
+                    <span class="invalid-feedback">Last Name can't be blank.</span>
+                </mat-form-field>
+            </p>
+            <p fxLayoutAlign="center" class="d-flex align-items-center justify-content-center w-100">
+                <mat-form-field appearance="standard"  style="width: 80%;">
+                    <mat-label>Enter Email</mat-label>
+                    <input type="email" matInput placeholder="Email" ngModel name="email"
+                        [ngClass]="{ 'is-invalid': registerForm.get('email').touched && registerForm.get('email').invalid }"
+                        formControlName="email">
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-hint>email</mat-hint>
+                    <span class="invalid-feedback">
+                        <span *ngIf="registerForm.get('email').hasError('required')">Email can't be blank.</span>
+                        <span *ngIf="registerForm.get('email').hasError('email')">Email must be valid.</span>
+                    </span>
+                </mat-form-field>
+            </p>
+            <p fxLayoutAlign="center" class="d-flex align-items-center justify-content-center w-100">
+                <mat-form-field appearance="standard" style="width: 80%;">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="password" ngModel name="password"
+                        [ngClass]="{ 'is-invalid': registerForm.get('password').touched && registerForm.get('password').invalid }"
+                        formControlName="password">
+                    <mat-icon matSuffix>password</mat-icon>
+                    <mat-hint>password</mat-hint>
+                    <span class="invalid-feedback">
+                        <span *ngIf="registerForm.get('password').hasError('required')">Password can't be
+                            blank.</span>
+                        <span *ngIf="registerForm.get('password').hasError('symbol')">Password must contain @</span>
+                        <span *ngIf="registerForm.get('password').hasError('minlength')">Password must contain
+                            minimum 6 characters</span>
+                    </span>
+                </mat-form-field>
+            </p>
+            <p fxLayoutAlign="center" class="d-flex align-items-center justify-content-center w-100">
+                <mat-form-field appearance="standard" style="width: 80%;">
+                    <mat-label>Confirm Your Password</mat-label>
+                    <input type="password" matInput placeholder="confirm password" ngModel name="cpassword" [ngClass]="{ 'is-invalid': registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid }"
+                    formControlName="confirmPassword">
+                    <mat-icon matSuffix>password</mat-icon>
+                    <mat-hint>confirm password</mat-hint>
+                    <span class="invalid-feedback">Passwords must match.</span>
+                </mat-form-field>
+            </p>
+
+            <div class="form-group" style="width: 80%;">
+                <span style="font-weight: 100; font-size: medium;">Already have Account? <a routerLink="/login" style="font-weight: 400;" class="ml-1">Login</a> </span>
+            </div>
+
+            <section fxLayoutAlign="center">
+                <div class="example-button-row" fxLayoutAlign="center">
+                    <button class="logRegBtn" mat-raised-button color="warn" [disabled]="registerForm.invalid">Register</button>
+                </div>
+            </section>
+        </form>
+    </mat-card>
+</div>

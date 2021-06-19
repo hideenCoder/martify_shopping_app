@@ -1,0 +1,25 @@
+<div class="d-flex align-items-center justify-content-center py-5">
+    <div id="panel" class="panel-container">
+        <strong>Are you satisfied with our collections?</strong>
+        <div class="ratings-container">
+            <div class="rating" value="unhappy">
+                <img src="https://image.flaticon.com/icons/svg/187/187150.svg" alt="" />
+                <small>Not Really</small>
+            </div>
+            <div class="rating" value="Neutral">
+                <img src="https://image.flaticon.com/icons/svg/187/187136.svg" alt="" />
+                <small> Yes, Perfect </small>
+            </div>
+
+            <div class="rating active" value="Satisfied">
+                <img src="https://image.flaticon.com/icons/svg/187/187133.svg" alt="" />
+                <small>Loved it!</small>
+            </div>
+        </div>
+        <button class="btn" id="send" (click)="togglefeedback()">Send Review</button>
+        &nbsp;&nbsp;
+        <h5 *ngIf="showfeedback"><strong>
+                Thanks for your valuable feedback. We value your opinion.</strong>
+        </h5>
+    </div>
+</div>
