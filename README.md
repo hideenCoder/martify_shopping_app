@@ -20,10 +20,10 @@
     EMAIL_PASS = Your Password
  
 # 11. open the server folder in terminal and run this commands..
-npm i
-npm start
+    npm i
+    npm start
 # 12. open the client folder in another terminal and run this commands..
-npm i
-ng serve
+    npm i
+    ng serve
 
 # FINALLY. project should be Running Successfully.
